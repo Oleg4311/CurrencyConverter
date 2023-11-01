@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="" />
+    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/AppStyled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/CurrencyChartStyled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/CurrencyListStyled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/GlobalStyles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/HeaderStyled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/PaginationStyled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/WalletOperationsStyled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/themes/dark-theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/themes/light-theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CurrencyExchange.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,16 +33,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/osbelyi/Документы/currencyconverter/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/osbelyi/Документы/currencyconverter/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -35,8 +52,17 @@
       <option name="presentableId" value="Default" />
       <updated>1698753825001</updated>
       <workItem from="1698753831895" duration="18000" />
-      <workItem from="1698753870701" duration="949000" />
+      <workItem from="1698753870701" duration="6475000" />
+      <workItem from="1698822016501" duration="9192000" />
     </task>
+    <task id="LOCAL-00001" summary="firstCommitInitialProject">
+      <created>1698754983362</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698754983362</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -57,5 +83,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="firstCommitInitialProject" />
+    <option name="LAST_COMMIT_MESSAGE" value="firstCommitInitialProject" />
   </component>
 </project>
