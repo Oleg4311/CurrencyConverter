@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/AppStyled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/CurrencyChartStyled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/CurrencyListStyled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/GlobalStyles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/HeaderStyled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/PaginationStyled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/WalletOperationsStyled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/themes/dark-theme.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/themes/light-theme.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CurrencyExchange.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Pagination.tsx" afterDir="false" />
+    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="basicFunctions&amp;Styles">
+      <change afterPath="$PROJECT_DIR$/src/redux/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/exchangeSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CurrencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrencyChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CurrencyList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrencyList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Wallet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Wallet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/package-lock.json" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,7 +52,7 @@
       <updated>1698753825001</updated>
       <workItem from="1698753831895" duration="18000" />
       <workItem from="1698753870701" duration="6475000" />
-      <workItem from="1698822016501" duration="9192000" />
+      <workItem from="1698822016501" duration="22515000" />
     </task>
     <task id="LOCAL-00001" summary="firstCommitInitialProject">
       <created>1698754983362</created>
@@ -62,7 +61,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698754983362</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="basicFunctions&amp;Styles">
+      <created>1698831554579</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698831554579</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,6 +90,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="firstCommitInitialProject" />
-    <option name="LAST_COMMIT_MESSAGE" value="firstCommitInitialProject" />
+    <MESSAGE value="basicFunctions&amp;Styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="basicFunctions&amp;Styles" />
   </component>
 </project>

@@ -1,30 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchDataThunk, selectCurrencies, selectLatestRates } from '../redux/exchangeSlice';
+import { AppDispatch } from '../redux/store';  // Убедитесь, что путь корректный
 import { WalletContainer, BuySellButton, AmountInput, CurrencySelect } from '../assets/styles/WalletOperationsStyled';
 
-interface Currency {
-    name: string;
-    rate: number;
-}
+function WalletOperations() {
+    const rates = useSelector(selectLatestRates) || {};
+    const currenciesList = useSelector(selectCurrencies);
+    const currencies = Object.keys(currenciesList || {}).map(key => ({ name: key, rate: rates[key] }));
 
-interface Props<T extends { [key: string]: number }> {
-    balance: T;
-    rates: T;
-    setBalance: React.Dispatch<React.SetStateAction<T>>;
-    currencies: Currency[];
-    setCurrentCurrency: React.Dispatch<React.SetStateAction<string>>;
-}
+    const dispatch: AppDispatch = useDispatch();
 
-function WalletOperations<T extends { [key: string]: number }>({ balance, rates, setBalance, currencies }: Props<T>) {
-    const [selectedCurrency, setSelectedCurrency] = useState<string>(currencies[0].name);
+    useEffect(() => {
+        // Запрашиваем список валют и курсы при монтировании компонента
+        dispatch(fetchDataThunk({ type: 'currencies' }));
+        dispatch(fetchDataThunk({ type: 'latestRates' }));
+    }, [dispatch]);
+
+    // Начальное состояние баланса
+    const [balance, setBalance] = useState<{ [key: string]: number }>({
+        RUB: 1000000
+    });
+
+    const [selectedCurrency, setSelectedCurrency] = useState<string>(currencies[0]?.name || "");
     const [amount, setAmount] = useState<number>(0);
 
     const handleBuy = () => {
-        const costInRub = amount * rates[selectedCurrency as keyof T];
+        const rubRate = rates['RUB'] ? 1 / rates['RUB'] : 1;  // Если нет курса RUB, то используем 1 как фоллбек
+        const costInRub = amount * rates[selectedCurrency] * rubRate;
+
         if (amount > 0 && balance['RUB'] >= costInRub) {
             setBalance(prevBalance => ({
                 ...prevBalance,
                 RUB: prevBalance['RUB'] - costInRub,
-                [selectedCurrency]: (prevBalance as any)[selectedCurrency] + amount
+                [selectedCurrency]: (prevBalance[selectedCurrency] || 0) + amount
             }));
         } else {
             alert('Insufficient funds in RUB.');
@@ -32,12 +41,12 @@ function WalletOperations<T extends { [key: string]: number }>({ balance, rates,
     };
 
     const handleSell = () => {
-        const rubGained = amount * rates[selectedCurrency as keyof T];
-        if (amount > 0 && (balance as any)[selectedCurrency] >= amount) {
+        const rubGained = amount * rates[selectedCurrency];
+        if (amount > 0 && (balance[selectedCurrency] || 0) >= amount) {
             setBalance(prevBalance => ({
                 ...prevBalance,
                 RUB: prevBalance['RUB'] + rubGained,
-                [selectedCurrency]: (prevBalance as any)[selectedCurrency] - amount
+                [selectedCurrency]: prevBalance[selectedCurrency] - amount
             }));
         } else {
             alert(`Insufficient funds in ${selectedCurrency}.`);
@@ -46,13 +55,20 @@ function WalletOperations<T extends { [key: string]: number }>({ balance, rates,
 
     return (
         <WalletContainer>
-            <p>Balance: {balance['RUB'].toFixed(2)} RUB, {(balance[selectedCurrency as keyof T] || 0).toFixed(2)} {selectedCurrency}</p>
+            <p>Balance: {balance['RUB'].toFixed(2)} RUB, {(balance[selectedCurrency] || 0).toFixed(2)} {selectedCurrency}</p>
             <CurrencySelect value={selectedCurrency} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedCurrency(e.target.value)}>
                 {currencies.map(currency => (
                     <option key={currency.name} value={currency.name}>{currency.name}</option>
                 ))}
             </CurrencySelect>
-            <AmountInput type="number" value={amount} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAmount(Number(e.target.value))} placeholder="Amount" />
+            <AmountInput
+                type="number"
+                value={amount}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAmount(Number(e.target.value))}
+                placeholder="Amount"
+                min="0"
+                step="1"
+            />
             <BuySellButton onClick={handleBuy}>Buy</BuySellButton>
             <BuySellButton onClick={handleSell}>Sell</BuySellButton>
         </WalletContainer>

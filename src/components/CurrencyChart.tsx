@@ -1,64 +1,87 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart, CategoryScale, LineController, PointElement, LineElement, LinearScale } from 'chart.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchDataThunk, selectTimeSeriesData, selectCurrencies } from '../redux/exchangeSlice';
 import { StyledCurrencyChart, ChartHeader, ChartSelect, getDatasetStyles } from '../assets/styles/CurrencyChartStyled';
+import { AppDispatch } from '../redux/store';
 
-// Регистрация всех необходимых модулей
 Chart.register(CategoryScale, LineController, PointElement, LineElement, LinearScale);
 
-interface CurrencyData {
-    date: string;
-    rate: number;
-    name: string;
+type TimeSeriesEntry = {
+    [currency: string]: number;
 }
 
-interface Props {
-    currencyData: CurrencyData[]; // Изменили тип здесь
-    currencyName: string;
+type TimeSeriesData = {
+    [date: string]: TimeSeriesEntry;
 }
 
-const CurrencyChart: React.FC<Props> = ({ currencyData, currencyName: initialCurrencyName }) => {
+const CurrencyChart: React.FC = () => {
+    const dispatch: AppDispatch = useDispatch();
+    const timeSeriesData: TimeSeriesData | undefined = useSelector(selectTimeSeriesData);
+    const availableCurrencies = useSelector(selectCurrencies);
+
     const [period, setPeriod] = useState<number>(7);
-    const [selectedCurrency, setSelectedCurrency] = useState<string>(initialCurrencyName);
+    const [selectedCurrency, setSelectedCurrency] = useState<string>('GBP');
 
-    const filteredData = currencyData
-        .filter(item => item.name === selectedCurrency)
-        .slice(-period);
+    useEffect(() => {
+        if (!availableCurrencies) {
+            dispatch(fetchDataThunk({ type: 'currencies' }));
+        }
+
+        const today = new Date();
+        const startDate = new Date();
+        startDate.setDate(today.getDate() - period);
+
+        dispatch(fetchDataThunk({
+            type: 'timeSeriesRates',
+            params: {
+                startDate: startDate.toISOString().split('T')[0],
+                endDate: today.toISOString().split('T')[0]
+            }
+        }));
+    }, [selectedCurrency, period, dispatch, availableCurrencies]);
+
+    const labels = timeSeriesData
+        ? Object.keys(timeSeriesData)
+        : [];
+
+    const dataset = timeSeriesData
+        ? Object.values(timeSeriesData).map(data => data[selectedCurrency] || 0)
+        : [];
+    
+    const currencyLabel = availableCurrencies && selectedCurrency in availableCurrencies
+        ? availableCurrencies[selectedCurrency]
+        : selectedCurrency;
 
     const data = {
-        labels: filteredData.map(item => item.date),
-        datasets: [
-            {
-                ...getDatasetStyles(selectedCurrency),
-                data: filteredData.map(item => item.rate)
-            }
-        ],
+        labels: labels,
+        datasets: [{
+            ...getDatasetStyles(selectedCurrency),
+            label: currencyLabel,
+            data: dataset
+        }]
     };
 
     return (
         <StyledCurrencyChart>
             <ChartHeader>{selectedCurrency} Exchange Rate</ChartHeader>
-
-            {/* Dropdown to select currency */}
             <select value={selectedCurrency} onChange={(e) => setSelectedCurrency(e.target.value)}>
-                {Array.from(new Set(currencyData.map(item => item.name))).map(name => (
-                    <option key={name} value={name}>
-                        {name}
+                {availableCurrencies && Object.keys(availableCurrencies).map(currencyCode => (
+                    <option key={currencyCode} value={currencyCode}>
+                        {availableCurrencies[currencyCode]}
                     </option>
                 ))}
             </select>
-
             <ChartSelect value={period} onChange={(e) => setPeriod(Number(e.target.value))}>
                 <option value={7}>Last 7 days</option>
                 <option value={30}>Last 30 days</option>
                 <option value={90}>Last 90 days</option>
                 <option value={365}>Last 365 days</option>
             </ChartSelect>
-
             <Line data={data} />
         </StyledCurrencyChart>
     );
 }
-
 
 export default CurrencyChart;

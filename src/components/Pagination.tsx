@@ -14,8 +14,34 @@ const Pagination: React.FC<PaginationProps> = ({ pages, currentPage, onPageChang
         }
     };
 
+    const goBack = () => {
+        if (currentPage > 1) {
+            onPageChange(currentPage - 1);
+        }
+    };
+
+    const goForward = () => {
+        if (currentPage < pages) {
+            onPageChange(currentPage + 1);
+        }
+    };
+
+    const goToFirstPage = () => {
+        onPageChange(1);
+    };
+
+    const goToLastPage = () => {
+        onPageChange(pages);
+    };
+
     return (
         <StyledPagination>
+            <button onClick={goToFirstPage} disabled={currentPage === 1}>
+                &lt;&lt;
+            </button>
+            <button onClick={goBack} disabled={currentPage === 1}>
+                &lt;
+            </button>
             {[...Array(pages)].map((_, index) => (
                 <button
                     key={index}
@@ -25,6 +51,12 @@ const Pagination: React.FC<PaginationProps> = ({ pages, currentPage, onPageChang
                     {index + 1}
                 </button>
             ))}
+            <button onClick={goForward} disabled={currentPage === pages}>
+                &gt;
+            </button>
+            <button onClick={goToLastPage} disabled={currentPage === pages}>
+                &gt;&gt;
+            </button>
         </StyledPagination>
     );
 }
