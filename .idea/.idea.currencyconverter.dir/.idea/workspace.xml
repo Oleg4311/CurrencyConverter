@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="basicFunctions&amp;Styles">
-      <change afterPath="$PROJECT_DIR$/src/redux/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/exchangeSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
+    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/CurrencyConverterStyled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CurrencyConverter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CurrencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrencyChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CurrencyList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrencyList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Wallet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Wallet.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +45,8 @@
       <updated>1698753825001</updated>
       <workItem from="1698753831895" duration="18000" />
       <workItem from="1698753870701" duration="6475000" />
-      <workItem from="1698822016501" duration="22515000" />
+      <workItem from="1698822016501" duration="23486000" />
+      <workItem from="1698850054848" duration="4177000" />
     </task>
     <task id="LOCAL-00001" summary="firstCommitInitialProject">
       <created>1698754983362</created>
@@ -68,7 +62,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698831554579</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="allFuncsDone">
+      <created>1698849234255</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698849234255</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +92,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="firstCommitInitialProject" />
     <MESSAGE value="basicFunctions&amp;Styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="basicFunctions&amp;Styles" />
+    <MESSAGE value="allFuncsDone" />
+    <option name="LAST_COMMIT_MESSAGE" value="allFuncsDone" />
   </component>
 </project>

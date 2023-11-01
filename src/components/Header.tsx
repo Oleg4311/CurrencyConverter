@@ -14,6 +14,7 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme, setActiveComponent }) => {
             <button onClick={() => setActiveComponent('CurrencyList')}>Список валют</button>
             <button onClick={() => setActiveComponent('WalletOperations')}>Операции с кошельком</button>
             <button onClick={() => setActiveComponent('CurrencyChart')}>График валют</button>
+            <button onClick={() => setActiveComponent('CurrencyConverter')}>Конвертер валют</button>
         </StyledHeader>
     );
 }
