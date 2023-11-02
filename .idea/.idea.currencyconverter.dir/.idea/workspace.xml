@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="">
+    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="allFuncs&amp;StylesDone">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/CurrencyConverterStyled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/CurrencyConverterStyled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/CurrencyListStyled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/CurrencyListStyled.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CurrencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrencyChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CurrencyList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrencyList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Wallet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Wallet.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/exchangeSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/exchangeSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,16 +23,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/osbelyi/Документы/currencyconverter/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/osbelyi/Документы/JetBrains.Rider-2022.2.4/JetBrains Rider-2022.2.4/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698849234255</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="allFuncs&amp;StylesDone">
+      <created>1698919060939</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698919060939</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,6 +98,7 @@
     <MESSAGE value="firstCommitInitialProject" />
     <MESSAGE value="basicFunctions&amp;Styles" />
     <MESSAGE value="allFuncsDone" />
-    <option name="LAST_COMMIT_MESSAGE" value="allFuncsDone" />
+    <MESSAGE value="allFuncs&amp;StylesDone" />
+    <option name="LAST_COMMIT_MESSAGE" value="allFuncs&amp;StylesDone" />
   </component>
 </project>

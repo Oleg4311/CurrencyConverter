@@ -31,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-currency": "react-scripts build",
+    "deploy-currency": "npm run build-currency && gh-pages -d dist"    
   },
   "eslintConfig": {
     "extends": [
@@ -45,10 +47,14 @@
       "not dead",
       "not op_mini all"
     ],
-    "development": [
+    "developmet": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0",
+    "@babel/plugin-proposal-private-property-in-object": "^1.0.0"
   }
 }
