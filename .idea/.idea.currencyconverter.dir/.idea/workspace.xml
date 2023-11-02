@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="deployProjectCommit">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="gpPages">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698923522023</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="gpPages">
+      <created>1698924774872</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698924774872</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +112,7 @@
     <MESSAGE value="allFuncsDone" />
     <MESSAGE value="allFuncs&amp;StylesDone" />
     <MESSAGE value="deployProjectCommit" />
-    <option name="LAST_COMMIT_MESSAGE" value="deployProjectCommit" />
+    <MESSAGE value="gpPages" />
+    <option name="LAST_COMMIT_MESSAGE" value="gpPages" />
   </component>
 </project>
