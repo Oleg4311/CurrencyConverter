@@ -1,48 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="dep">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/AppStyled.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/CurrencyChartStyled.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/CurrencyConverterStyled.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/CurrencyListStyled.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/GlobalStyles.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/HeaderStyled.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/HomeStyled.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/PaginationStyled.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/WalletOperationsStyled.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/themes/dark-theme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/assets/styles/themes/light-theme.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/components/CurrencyChart.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/components/CurrencyConverter.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/components/CurrencyExchange.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/components/CurrencyList.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/components/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/components/Home.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/components/Pagination.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/components/Wallet.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/redux/api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/redux/exchangeSlice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/redux/store.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tsconfig.json" beforeDir="false" />
+    <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="deployToVersel">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/package-lock.json" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -132,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698925665217</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="deployToVersel">
+      <created>1698926294599</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698926294599</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +133,7 @@
     <MESSAGE value="gpPages" />
     <MESSAGE value="depChanges" />
     <MESSAGE value="dep" />
-    <option name="LAST_COMMIT_MESSAGE" value="dep" />
+    <MESSAGE value="deployToVersel" />
+    <option name="LAST_COMMIT_MESSAGE" value="deployToVersel" />
   </component>
 </project>
