@@ -8,7 +8,7 @@ export const StyledHeader = styled.div<StyledHeaderProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px;
   background-color: #262626;
   color: #fff;
 

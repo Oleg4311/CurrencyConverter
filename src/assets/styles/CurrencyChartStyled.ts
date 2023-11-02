@@ -4,10 +4,9 @@ export const StyledCurrencyChart = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   padding: 20px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px 0 20px 0;  // уменьшил верхний отступ до 10px
+  margin: 20px 0 20px 0;
   border-radius: 10px;
   border: 1px solid ${(props) => props.theme.color};
 
