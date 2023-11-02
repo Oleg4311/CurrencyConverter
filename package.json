@@ -2,7 +2,6 @@
   "name": "currencyconverter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://oleg4311.github.io/currencyconverter/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
@@ -32,9 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build-currency": "react-scripts build",
-    "deploy-currency": "npm run build-currency && gh-pages -d dist"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
