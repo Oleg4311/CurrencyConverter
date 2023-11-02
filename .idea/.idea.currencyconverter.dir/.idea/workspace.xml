@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc204c1d-1878-48c0-94a4-9705d1b77866" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/CurrencyConverterStyled.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CurrencyConverter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.currencyconverter.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/CurrencyConverterStyled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/CurrencyConverterStyled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/CurrencyListStyled.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/CurrencyListStyled.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CurrencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrencyChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CurrencyList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrencyList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Wallet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Wallet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/exchangeSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/exchangeSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

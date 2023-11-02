@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     fetchDataThunk,
     selectCurrencies,
     selectLatestRates,
     selectStatus,
+    selectBase,
+    selectCurrentPage,
+    setCurrentPage
 } from '../redux/exchangeSlice';
 import { AppDispatch } from '../redux/store';
-import { StyledCurrencyList, StyledCurrencyItem } from '../assets/styles/CurrencyListStyled';
+import { StyledCurrencyList, StyledCurrencyItem, StyledHeader } from '../assets/styles/CurrencyListStyled';
 import Pagination from './Pagination';
 
 interface CurrencyProps {
@@ -20,17 +23,20 @@ const CurrencyList: React.FC = () => {
     const currencies = useSelector(selectCurrencies);
     const latestRates = useSelector(selectLatestRates);
     const status = useSelector(selectStatus);
-    const [currentPage, setCurrentPage] = useState(1);
+    const base = useSelector(selectBase);
+    const currentPage = useSelector(selectCurrentPage);
     const itemsPerPage = 10;
 
     useEffect(() => {
-        // Диспатчим экшн для получения списка валют только если данные еще не загружены
-        if (!latestRates) {
-            dispatch(fetchDataThunk({ type: 'latestRates' }));
-        }
-    }, [dispatch, latestRates]);
+        dispatch(fetchDataThunk({ type: 'latestRates', params: { page: currentPage }}));
+    }, [dispatch, currentPage]);
 
-    // Проверяем, были ли загружены валюты
+    useEffect(() => {
+        if (!currencies) {
+            dispatch(fetchDataThunk({ type: 'currencies' }));
+        }
+    }, [dispatch, currencies]);
+
     if (status === 'loading' && !latestRates) {
         return <div>Загрузка...</div>;
     }
@@ -39,42 +45,41 @@ const CurrencyList: React.FC = () => {
         return <div>Ошибка загрузки валют</div>;
     }
 
-    // Типизируем latestRates
-    type LatestRates = {
-        [key: string]: number;
-    };
-
-    // Проверка, что latestRates не равен undefined или null, и также не пустой объект
     if (!latestRates || Object.keys(latestRates).length === 0) {
         return <div>Нет доступных данных о валютах</div>;
     }
 
-    // Используем latestRates для отображения курсов валют
-    const latestRatesTyped: LatestRates = latestRates;
-
-    // Вычисляем начальный и конечный индексы для текущей страницы
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-
-    // Фильтруем валюты для текущей страницы
-    const currenciesToShow = Object.entries(latestRatesTyped)
-        .slice(startIndex, endIndex)
+    const currenciesToShow = Object.entries(latestRates)
         .map(([name, rate]) => ({ name, rate }));
 
+    const totalCurrencies = Object.keys(currencies || {}).length - 1; // учитываем исключение базовой валюты
+    const totalPages = Math.ceil(totalCurrencies / itemsPerPage);
     return (
-        <StyledCurrencyList>
-            {currenciesToShow.map(({ name, rate }) => (
-                <StyledCurrencyItem key={name}>
-                    <span>{name}</span>
-                    <span>{rate}</span>
-                </StyledCurrencyItem>
-            ))}
+        <div>
+            <StyledCurrencyList>
+                <StyledHeader>
+                    <tr>
+                        <th>Наименование валюты</th>
+                        <th>Обозначение</th>
+                        <th>Курс по отношению к {base}</th>
+                    </tr>
+                </StyledHeader>
+                <tbody>
+                {currenciesToShow.map(({ name, rate }) => (
+                    <StyledCurrencyItem key={name}>
+                        <td>{currencies ? currencies[name] : 'N/A'}</td>
+                        <td>{name}</td>
+                        <td>{rate ? rate.toString() : 'N/A'}</td>
+                    </StyledCurrencyItem>
+                ))}
+                </tbody>
+            </StyledCurrencyList>
             <Pagination
-                pages={Math.ceil(Object.keys(latestRatesTyped).length / itemsPerPage)}
+                pages={totalPages}
                 currentPage={currentPage}
-                onPageChange={setCurrentPage}
+                onPageChange={(page) => dispatch(setCurrentPage(page))}
             />
-        </StyledCurrencyList>
+        </div>
     );
 };
 

@@ -35,6 +35,7 @@ export const StyledConvertButton = styled.button`
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    background-color: ${(props) => props.theme.background};
 
     &:hover {
         background-color: ${(props) => props.theme.color};
@@ -52,12 +53,3 @@ export const StyledSuccessResult = styled.div`
     color: ${(props) => props.theme.background};
 `;
 
-// export const StyledErrorResult = styled.div`
-//     font-size: 18px;
-//     margin-top: 10px;
-//     padding: 10px;
-//     border-radius: 5px;
-//     text-align: center;
-//     background-color: ${(props) => props.theme.errorColor || '#f00'};
-//     color: ${(props) => props.theme.background};
-// `;

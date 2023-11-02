@@ -12,7 +12,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchDataThunk,
   selectTimeSeriesData,
-  selectCurrencies,
+  selectCurrencies, 
+  selectBase,
 } from "../redux/exchangeSlice";
 import {
     StyledCurrencyChart,
@@ -44,6 +45,7 @@ const CurrencyChart: React.FC = () => {
   const timeSeriesData: TimeSeriesData | undefined =
     useSelector(selectTimeSeriesData);
   const availableCurrencies = useSelector(selectCurrencies);
+  const base = useSelector(selectBase);
 
   const [period, setPeriod] = useState<number>(7);
   const [selectedCurrency, setSelectedCurrency] = useState<string>("GBP");
@@ -92,7 +94,7 @@ const CurrencyChart: React.FC = () => {
 
   return (
     <StyledCurrencyChart>
-      <ChartHeader>{selectedCurrency} to EUR exchange rate chart</ChartHeader>
+      <ChartHeader>График колебания курса {selectedCurrency} к {base}</ChartHeader>
       <ChartControls>
         <select
           value={selectedCurrency}

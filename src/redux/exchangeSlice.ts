@@ -8,7 +8,10 @@ interface ExchangeState {
     timeSeriesData: Record<string, Record<string, number>> | null;
     conversionResult: Record<string, number> | null;
     status: 'idle' | 'loading' | 'succeeded' | 'failed';
+    base: string;
     error: string | null;
+    currentPage: number;
+    pageSize: number;
 }
 
 interface FetchParams {
@@ -19,6 +22,8 @@ interface FetchParams {
     amount?: number;
     fromCurrency?: string;
     toCurrency?: string;
+    page?: number;       // for pagination
+    pageSize?: number;   // for pagination
 }
 
 interface FetchDataArgs {
@@ -33,7 +38,10 @@ const initialState: ExchangeState = {
     timeSeriesData: null,
     conversionResult: null,
     status: 'idle',
+    base: 'EUR',
     error: null,
+    currentPage: 1,
+    pageSize: 10,
 };
 
 export const fetchDataThunk = createAsyncThunk<any, FetchDataArgs>(
@@ -44,7 +52,9 @@ export const fetchDataThunk = createAsyncThunk<any, FetchDataArgs>(
                 return { type: 'currencies', data: await fetchAvailableCurrencies() };
             case 'latestRates':
                 const fromCurrency = args.params?.from || 'EUR';
-                return { type: 'latestRates', data: await fetchLatestRates(fromCurrency) };
+                const page = args.params?.page || 1;
+                const pageSize = args.params?.pageSize || 10;
+                return { type: 'latestRates', data: await fetchLatestRates(fromCurrency, page, pageSize) };
             case 'historicalRates':
                 const date = args.params?.date;
                 if (!date) {
@@ -73,7 +83,11 @@ export const fetchDataThunk = createAsyncThunk<any, FetchDataArgs>(
 const exchangeSlice = createSlice({
     name: 'exchange',
     initialState,
-    reducers: {},
+    reducers: {
+        setCurrentPage: (state, action: PayloadAction<number>) => {
+            state.currentPage = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchDataThunk.pending, (state) => {
@@ -107,6 +121,8 @@ const exchangeSlice = createSlice({
     },
 });
 
+export const { setCurrentPage } = exchangeSlice.actions;
+
 export default exchangeSlice.reducer;
 
 // Selectors
@@ -116,3 +132,7 @@ export const selectHistoricalData = (state: any) => state.exchange.historicalDat
 export const selectTimeSeriesData = (state: any) => state.exchange.timeSeriesData;
 export const selectConversionResult = (state: any) => state.exchange.conversionResult;
 export const selectStatus = (state: any) => state.exchange.status;
+export const selectError = (state: any) => state.exchange.error;
+export const selectBase = (state: any) => state.exchange.base;
+export const selectCurrentPage = (state: any) => state.exchange.currentPage;
+export const selectPageSize = (state: any) => state.exchange.pageSize;
